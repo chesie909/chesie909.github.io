@@ -277,6 +277,7 @@ html {
     .intro-image-container img {
         margin-top: 1rem;
         max-width: 60%; /* Adjusts image width for mobile */
+        margin-bottom: 1rem;
     }
 
     .welcome-text {
@@ -412,7 +413,40 @@ html {
 
 
 
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .panel {
+        height: auto; /* Allows height to grow with content on mobile */
+        padding: 2rem 1rem; /* Adds padding for a better layout */
+    }
 
+    .project-container {
+        flex-direction: column; /* Stacks cards vertically */
+        align-items: center;
+        gap: 1.5rem; /* Space between stacked cards */
+    }
+
+    .featured-project-card {
+        width: 70%; /* Adjusts card width on mobile */
+        height: 52; /* Allows card height to grow */
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-category,
+    .project-intro {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust Spacing for Images */
+    .project-image {
+        width: 80%;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
 
 
 
