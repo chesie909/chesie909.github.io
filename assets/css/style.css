@@ -112,7 +112,7 @@ nav ul li + li {
         transform: translate(-50%, -50%);
         width: 50vw;
         height: 50vh;
-        background-color: rgba(48, 48, 48, 0.8); /* Less transparency */
+        background-color: rgba(48, 48, 48, 0.92); /* Less transparency */
         color: var(--color-light);
         border-radius: 10px;
         padding: 1.5rem; /* Slightly reduced padding */
