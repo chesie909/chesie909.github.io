@@ -1,0 +1,901 @@
+/*** General Styles ***/
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* scroll-behavior: smooth; */
+}
+
+/* Colors */
+:root {
+    --color-light: #f2f2f2;
+    --color-dark: #303030;
+    --color-dark: #303030;
+    --color-light: #f2f2f2;
+    --color-blue: #486a82;
+    --color-red: #c35d4e;
+    --color-purple: #514882;
+    --color-light-blue: #e4ebef;
+    --color-light-red: #efe4e2;
+    --color-light-purple: #e6e5ed;
+
+    /* Tag Colors */
+    --skill-color: #c35d4e;
+    --language-color: #424246;
+    --tool-color: #486a82;
+}
+
+/* Body Text */
+body {
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* Full-screen Panels */
+.panel {
+    height: 92vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 92vh; /* Optional: Test without other styles first */
+    padding: 10rem 0; /* Adds spacing without enforcing alignment */
+}
+
+
+
+/*** Navigation Bar ***/
+
+/* Desktop Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: var(--color-dark);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-light);
+}
+
+/* Desktop Menu */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.home-icon {
+    margin-right: auto; /* Home on the left */
+}
+
+nav ul li a {
+    color: var(--color-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+nav ul li + li {
+    margin-left: 1.75rem; /* Spacing between other menu items */
+}
+
+.home-text {
+    display: none; /* Hide Home text on desktop */
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50vw;
+        height: 50vh;
+        background-color: rgba(48, 48, 48, 0.8); /* Less transparency */
+        color: var(--color-light);
+        border-radius: 10px;
+        padding: 1.5rem; /* Slightly reduced padding */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 20;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2rem; /* Tighter spacing between links */
+    }
+
+    #menu.show {
+        display: flex;
+    }
+
+    .home-icon img {
+        display: none;
+    }
+
+    .home-text {
+        display: inline; /* Show Home text on mobile */
+        font-size: 1.2rem;
+    }
+
+    #menu li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+
+/*** Home Page ***/
+
+/* Ensure the home page enables vertical scroll snapping */
+/* Body with snapping */
+/* Scroll snapping for the home page */
+html {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* Snap each .panel section */
+#home-page .panel {
+    scroll-snap-align: start;
+}
+
+
+
+/* Intro Section Styling */
+#intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh 10vw;
+    gap: 2rem;
+    background-color: var(--color-light);
+    min-height: 92vh; /* Ensures it spans the viewport height */
+    padding-top: 8vh; /* Pushes content below the fixed navbar */
+    box-sizing: border-box;
+}
+
+/* Container Wrapper */
+.intro-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    flex-direction: row; /* Side-by-side layout on desktop */
+}
+
+.intro-text-container {
+    flex: 3;
+    color: var(--color-dark);
+    text-align: left;
+    margin-left: 4vw;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    color: var(--color-purple); /* Set "Hello! I am" to blue */
+    margin-bottom: 1rem;
+}
+
+.name-text {
+    font-size: 4rem; /* Adjust the size as needed */
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0.5rem 0;
+}
+
+.intro-description {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background-color: var(--color-purple);
+    color: var(--color-light);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Image Container */
+.intro-image-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-image-container img {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Layout: Stacked (Image First, Then Text) */
+@media (max-width: 768px) {
+    #intro {
+        flex-direction: column;
+        padding: 5vh 5vw;
+        align-items: center;
+        text-align: center;
+        padding-top: 8vh;
+        gap: 1rem;
+    }
+
+    .intro-container {
+        flex-direction: column; /* Stacked layout on mobile */
+        align-items: center;
+        gap: 1rem;
+        padding: 7vh 0;
+    }
+
+    .intro-text-container {
+        width: 90%; /* Ensures even spacing on both sides */
+        margin: 0 auto; /* Center-aligns with equal space on left and right */
+        text-align: center;
+        order: 2;
+    }
+
+    .intro-image-container {
+        width: 100%;
+        text-align: center;
+        order: 1;
+    }
+
+    .intro-image-container img {
+        margin-top: 1rem;
+        max-width: 60%; /* Adjusts image width for mobile */
+    }
+
+    .welcome-text {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
+    .name-text {
+        font-size: 2.8rem;
+        margin: 0.5rem 0;
+    }
+
+    .intro-description {
+        max-width: 100%;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .cta {
+        font-size: 1rem;
+        padding: 0.5rem 1.25rem;
+        margin-top: 1rem;
+    }
+}
+
+
+
+/* Center-aligned H1 titles for sections */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* About Text Styling */
+.about-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* Project Container */
+.project-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+ /* Project Card Styling */
+ .featured-project-card {
+    display: block;
+    width: 25rem;
+    height: 60vh;
+    background-color: var(--color-white);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Project Category Styling */
+.project-category {
+    color: var(--color-purple);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Project Title Styling */
+.project-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* Project Intro Styling */
+.project-intro {
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+/*** About Page ***/
+
+/* Basic Styling */
+.experience {
+    padding: 3rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+}
+
+
+/* Intro Experience Section */
+.intro-experience {
+    background-color: var(--color-light-purple); /* Light blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 40vh; /* Occupies about 60% of the viewport height */
+    margin-top: 8vh;
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    color: var(--color-dark); /* Text color */
+}
+
+.intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-purple); /* Darker blue for the title */
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+
+
+/* Timeline Container */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 8vh 2rem 4rem;
+    min-height: 85vh;
+    box-sizing: border-box;
+}
+
+/* Line */
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 90%;
+    background: linear-gradient(to bottom, #f2f2f2, var(--color-purple), #f2f2f2); /* Fades at both ends */
+    z-index: 1;
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline-content {
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.timeline-content.left {
+    text-align: right;
+    padding-right: 2rem;
+    margin-right: auto; /* Forces alignment to the left */
+}
+
+.timeline-content.right {
+    text-align: left;
+    padding-left: 2rem;
+    margin-left: auto; /* Forces alignment to the right */
+}
+
+/* Dots for Timeline Points */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-purple);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(50% - 6px);
+    z-index: 2;
+}
+
+
+/* Date Styling */
+.date {
+    font-size: 0.9rem;
+    color: var(--color-purple);
+    font-weight: bold;
+}
+
+/* Content Header Styling */
+.timeline-content h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-dark);
+    margin: 0.5rem 0;
+}
+
+/* Content Description */
+.timeline-content p {
+    font-size: 1rem;
+    color: var(--color-dark);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    .timeline-item {
+        flex-direction: row; /* Maintain left-right positioning */
+        align-items: flex-start;
+        text-align: left;
+        width: 90%; /* Reduce width for smaller screens */
+        margin: 1rem 0;
+    }
+
+    .timeline-content {
+        width: 40%; /* Reduce width to create more space */
+        padding: 0.5rem;
+    }
+
+    .timeline-content.left {
+        padding-right: 1rem;
+    }
+
+    .timeline-content.right {
+        padding-left: 1rem;
+    }
+
+    .timeline:before {
+        left: 50%;
+        width: 2px; /* Thinner line for mobile */
+    }
+
+    .timeline-item::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+/*** Project Page ***/
+
+/* Filter Container Styling */
+.filter-container {
+    width: 80vw;
+    background-color: #f2f2f2;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 3rem auto;
+    margin-top: 15vh; /* Ensures it starts right after the navbar */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+/* Filter Section Styling */
+.filter-section {
+    border-top: 1px solid #cccccc; /* Gray border between sections */
+    padding: 1rem;
+}
+
+.filter-section:first-child {
+    border-top: none; /* Remove border from the first section */
+}
+
+.filter-heading {
+    font-size: 1.17em; /* Matches h4 font size */
+    font-weight: bold; /* Ensures it has bold weight */
+    color: var(--color-dark); /* Customize with your existing color variable */
+    line-height: 1.2; /* Keeps spacing similar to h4 */
+    padding-bottom: 0.25em
+}
+
+:root {
+    --skill-color: #c35d4e;
+    --language-color: #514882;
+    --tool-color: #486a82;
+    --active-color: #ffffff;
+}
+
+/* Base Button Styling */
+.filter-options button {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Skill Buttons */
+.button-skill {
+    border: 1px solid var(--skill-color);
+    color: var(--skill-color);
+}
+
+.button-skill.active {
+    background-color: var(--skill-color);
+    color: var(--active-color);
+    border: none;
+}
+
+/* Language Buttons */
+.button-language {
+    border: 1px solid var(--language-color);
+    color: var(--language-color);
+}
+
+.button-language.active {
+    background-color: var(--language-color);
+    color: var(--active-color);
+    border: none;
+}
+
+/* Tool Buttons */
+.button-tool {
+    border: 1px solid var(--tool-color);
+    color: var(--tool-color);
+}
+
+.button-tool.active {
+    background-color: var(--tool-color);
+    color: var(--active-color);
+    border: none;
+}
+
+/* Global Buttons */
+.button-global {
+    border: 1px solid var(--color-purple);
+    color: var(--color-purple);
+}
+
+.button-global.active {
+    background-color: var(--color-purple);
+    color: #ffffff;
+    border: none;
+}
+
+
+
+.global-controls {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 1rem; /* Adds spacing between All and Clear */
+    margin-top: 1rem;
+}
+
+#global-all,
+#clear-filters {
+    background-color: #f2f2f2;
+    border: 1px solid #cccccc;
+    color: var(--color-dark);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.project-list-container {
+    width: 80vw; /* Matches the width of the filter container */
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increase min-width for larger cards */
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+
+
+ /* Project Card Styling */
+.project-card {
+    display: block;
+    width: 20rem;
+    height: 50vh;
+    background-color: var(--color-white);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Title Styling */
+.project-card .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+/* Paragraph Styling */
+.project-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+}
+
+/* Tag Styling */
+.project-card .tag {
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin: 0.25rem 0.25rem;
+}
+
+/* Category Colors for Tags */
+.project-card .tag-skill {
+    background-color: var(--skill-color);
+}
+
+.project-card .tag-language {
+    background-color: var(--language-color);
+}
+
+.project-card .tag-tool {
+    background-color: var(--tool-color);
+}
+
+/* Image Styling */
+.project-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin: 0.8rem 0 0.7rem 0;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-list-container {
+        grid-template-columns: 1fr; /* Switch to 1 column on mobile */
+    }
+}
+
+
+
+
+
+/*** Project Detail Page ***/
+.project-detail {
+    padding: 2rem;
+    text-align: center;
+}
+
+.project-detail h2 {
+    font-size: 2.5rem;
+    color: var(--color-purple);
+}
+
+.project-detail .media img {
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.project-detail p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* Buttons */
+.button {
+    display: inline-block;
+    background-color: var(--color-light);
+    color: var(--color-light);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-cards {
+        flex-direction: column;
+    }
+
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+/*** Footer ***/
+
+/* Footer */
+.footer {
+    background-color: var(--color-dark);  
+    color: #bbbbbb;          
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Icon and Link */
+.footer-container a {
+    color: #bbbbbb;
+    text-decoration: none;
+    margin: 0 0.8rem;
+}
+
+.footer-container img {
+    vertical-align: middle;
+}
+
+/* Copyright */
+.footer-container p {
+    margin: 1.2rem auto 0 auto;
+    text-align: center; 
+}
+
+
+
+/* Error 404 Section */
+.error-404 {
+    background-color: var(--color-light-purple); /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 78vh; /* Same height as intro-experience */
+    margin-top: 8vh; /* Starts after the navbar */
+    text-align: center;
+}
+
+.error-404-text {
+    max-width: 800px;
+    color: var(--color-dark); /* Text color */
+}
+
+.error-404-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-purple); /* Darker color for the title */
+}
+
+.error-404-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}

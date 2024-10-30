@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesie Yu - Projects</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Menu icon for mobile -->
+        <ul id="menu">
+            <li class="home-icon">
+                <a href="index.html">
+                    <img src="assets/img/icons/home.png" alt="Home" style="height: 24px; width: 24px;">
+                    <span class="home-text">Home</span> <!-- Visible on mobile -->
+                </a>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="design.html">Design</a></li>
+        </ul>
+    </nav>
+
+
+
+    <section class="filter-container">
+        <div class="filter-section">
+            <p class="filter-heading">Skill</p>
+            <div class="filter-options skill">
+                <button class="button-skill" data-filter="All">All</button>
+                <button class="button-skill" data-filter="Data-Science">Data Science</button>
+                <button class="button-skill" data-filter="Machine-Learning">Machine Learning</button>
+                <button class="button-skill" data-filter="Data-Engineering">Data Engineering</button>
+                <button class="button-skill" data-filter="Data-Analysis">Data Analysis</button>
+                <button class="button-skill" data-filter="Web-Development">Web Development</button>
+                <button class="button-skill" data-filter="UX-Design">UX Design</button>
+                <button class="button-skill" data-filter="NLP">NLP</button>
+                <button class="button-skill" data-filter="AI">AI</button>
+                <button class="button-skill" data-filter="Business-Intelligence">Business Intelligence</button>
+                <button class="button-skill" data-filter="Visualization-Design">Visualization Design</button>
+                <button class="button-skill" data-filter="Research">Research</button>
+                <button class="button-skill" data-filter="Database-Design">Database Design</button>
+                <button class="button-skill" data-filter="Econometrics">Econometrics</button>
+                <button class="button-skill" data-filter="A/B-Testing">A/B Testing</button>
+            </div>
+        </div>
+        <div class="filter-section">
+            <p class="filter-heading">Programming Language</p>
+            <div class="filter-options language">
+                <button class="button-language" data-filter="All">All</button>
+                <button class="button-language" data-filter="Python">Python</button>
+                <button class="button-language" data-filter="R">R</button>
+                <button class="button-language" data-filter="SQL">SQL</button>
+                <button class="button-language" data-filter="HTML">HTML</button>
+                <button class="button-language" data-filter="CSS">CSS</button>
+            </div>
+        </div>
+        <div class="filter-section">
+            <p class="filter-heading">Tool</p>
+            <div class="filter-options tool">
+                <button class="button-tool" data-filter="All">All</button>
+                <button class="button-tool" data-filter="Tableau">Tableau</button>
+                <button class="button-tool" data-filter="Snowflake">Snowflake</button>
+                <button class="button-tool" data-filter="Git">Git</button>
+                <button class="button-tool" data-filter="Figma">Figma</button>
+                <button class="button-tool" data-filter="Streamlit">Streamlit</button>
+                <button class="button-tool" data-filter="Dash">Dash</button>
+                <button class="button-tool" data-filter="Keras">Keras</button>
+                <button class="button-tool" data-filter="Sklearn">Sklearn</button>
+                <button class="button-tool" data-filter="Microsoft-SQL-Server">Microsoft SQL Server</button>
+                <button class="button-tool" data-filter="Apache-Airflow">Apache Airflow</button>
+            </div>
+        </div>
+        <div class="global-controls">
+            <button class="button-global" id="global-all">All</button>
+            <button class="button-global" id="clear-filters">Clear</button>
+        </div>
+    </section>
+    
+
+    
+    
+<!-- Project List -->
+<section class="project-list">
+    <div class="project-list-container">
+        <!-- Lambda News Digest -->
+        <a href="lambda-news-digest.html" class="project-card" data-skill="Data-Science NLP Web-Development UX-Design" data-language="Python HTML CSS" data-tool="Streamlit Git Figma">
+            <img src="assets/img/projects/covers/lambda-news-digest.png" alt="Lambda News Digest Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Engineering</span><span class="tag tag-skill">Data Science</span><span class="tag tag-skill">NLP</span><span class="tag tag-skill">AI</span><span class="tag tag-skill">Web Development</span><span class="tag tag-skill">UX Design</span>
+            <span class="tag tag-language">Python</span><span class="tag tag-language">HTML</span><span class="tag tag-language">CSS</span>
+            <span class="tag tag-tool">Streamlit</span><span class="tag tag-tool">Git</span><span class="tag tag-tool">Figma</span>
+            <div class="card-title">Lambda News Digest</div>
+            <p>Developed a live news platform, automating content aggregation and metadata extraction with Streamlit and NLP tools.</p>
+        </a>
+        
+        <!-- Retail Sales Analysis -->
+        <a href="bi-system.html" class="project-card" data-skill="Business-Intelligence Data-Analysis Data-Engineering" data-language="SQL" data-tool="Snowflake Tableau">
+            <img src="assets/img/projects/covers/bi-system.png" alt="Retail Sales Analysis Project Cover" class="project-image">
+            <span class="tag tag-skill">Business Intelligence</span><span class="tag tag-skill">Data Engineering</span><span class="tag tag-skill">Data Analysis</span><span class="tag tag-skill">Visualization Design</span>
+            <span class="tag tag-language">SQL</span><span class="tag tag-tool">Snowflake</span><span class="tag tag-tool">Tableau</span>
+            <div class="card-title">Retail Sales Analysis</div>
+            <p>Implemented Snowflake data warehouse and developed Tableau dashboards for retail insights.</p>
+        </a>
+        
+                
+        <!-- Spotify Music Recommendation System -->
+        <a href="spotify.html" class="project-card" data-skill="Data-Science Web-Development UX-Design" data-language="Python CSS" data-tool="Dash Git">
+            <img src="assets/img/projects/covers/spotify.png" alt="Spotify Music Recommendation Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Science</span><span class="tag tag-skill">Web Development</span><span class="tag tag-skill">UX Design</span>
+            <span class="tag tag-language">Python</span><span class="tag tag-language">CSS</span><span class="tag tag-tool">Dash</span><span class="tag tag-tool">Git</span>
+            <div class="card-title">Spotify Music Recommendation</div>
+            <p>Built a Dash-based recommendation system with user profile analysis and interactive visualizations.</p>
+        </a>
+        
+        <!-- Seattle Airbnb Listings Analysis -->
+        <a href="seattle-airbnb.html" class="project-card" data-skill="Data-Analysis" data-language="Tableau">
+            <img src="assets/img/projects/covers/seattle-airbnb.png" alt="Seattle Airbnb Listings Analysis Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Analysis</span><span class="tag tag-skill">Visualization Design</span>
+            <span class="tag tag-tool">Tableau</span>
+            <div class="card-title">Seattle Airbnb Listings Analysis</div>
+            <p>Performed analysis on Airbnb listings, creating interactive dashboards to highlight trends.</p>
+        </a>
+
+        
+        <!-- Automated Content Moderation -->
+        <a href="content-moderation.html" class="project-card" data-skill="Machine-Learning NLP Deep-Learning" data-language="Python" data-tool="Keras Sklearn">
+            <img src="assets/img/projects/covers/content-moderation.png" alt="Automated Content Moderation Project Cover" class="project-image">
+            <span class="tag tag-skill">Machine Learning</span><span class="tag tag-skill">NLP</span><span class="tag tag-skill">Deep Learning</span>
+            <span class="tag tag-language">Python</span><span class="tag tag-tool">Keras</span><span class="tag tag-tool">Sklearn</span>
+            <div class="card-title">Automated Content Moderation</div>
+            <p>Developed a content moderation model using BLSTM with GloVe embeddings to detect toxicity.</p>
+        </a>
+
+        <!-- YouTube Gaming Comment Toxicity -->
+        <a href="youtube-gaming.html" class="project-card" data-skill="Data-Analysis NLP" data-language="Python" data-tool="Git">
+            <img src="assets/img/projects/covers/youtube-gaming.png" alt="YouTube Gaming Comment Toxicity Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Science</span><span class="tag tag-skill">Data Analysis</span><span class="tag tag-skill">NLP</span><span class="tag tag-skill">Research</span>
+            <span class="tag tag-language">Python</span><span class="tag tag-tool">Git</span>
+            <div class="card-title">YouTube Gaming Comment Toxicity</div>
+            <p>Analyzed YouTube comments using NLP, optimizing data pipeline and evaluating toxicity.</p>
+        </a>
+        
+        <!-- Multi-Model Travel Booking Database -->
+        <a href="travel-booking.html" class="project-card" data-skill="Data-Engineering Database-Design" data-language="SQL Python" data-tool="Tableau">
+            <img src="assets/img/projects/covers/travel-booking.png" alt="Multi-Model Travel Booking Database Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Engineering</span><span class="tag tag-skill">Database Design</span>
+            <span class="tag tag-language">SQL</span><span class="tag tag-language">Python</span>
+            <span class="tag tag-tool">Microsoft SQL Server</span><span class="tag tag-tool">Tableau</span>
+            <div class="card-title">Travel Booking Database</div>
+            <p>Engineered a multi-model database with ETL, integrating data sources for travel insights.</p>
+        </a>
+        
+        <!-- Improving Customer Engagement -->
+        <!-- <a href="contextualized-marketing.html" class="project-card" data-skill="Data-Analysis" data-language="Python">
+            <img src="assets/img/projects/covers/contextualized-marketing.png" alt="Customer Engagement Marketing Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Analysis</span><span class="tag tag-skill">Research</span>
+            <span class="tag tag-language">Python</span><span class="tag tag-skill">A/B Testing</span>
+            <div class="card-title">Customer Engagement Marketing</div>
+            <p>Conducted sentiment analysis for marketing strategies using qualitative and quantitative methods.</p>
+        </a> -->
+        
+        <!-- Online Consumer Banking Database -->
+        <a href="consumer-banking.html" class="project-card" data-skill="Database-Design" data-language="SQL">
+            <img src="assets/img/projects/covers/consumer-banking.png" alt="Online Consumer Banking Database Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Engineering</span><span class="tag tag-skill">Database Design</span>
+            <span class="tag tag-language">SQL</span><span class="tag tag-tool">Microsoft SQL Server</span>
+            <div class="card-title">Online Consumer Banking Database</div>
+            <p>Designed a secure SQL database with features like encryption, triggers, and optimized queries.</p>
+        </a>
+
+        <!-- Environmental Impact on Property Values -->
+        <!-- <a href="housing-price.html" class="project-card" data-skill="Data-Analysis" data-language="R">
+            <img src="assets/img/projects/covers/housing-price.jpg" alt="Environmental Impact on Property Values Project Cover" class="project-image">
+            <span class="tag tag-skill">Machine Learning</span><span class="tag tag-skill">Data Science</span><span class="tag tag-skill">Econometrics</span>
+            <span class="tag tag-language">R</span>
+            <div class="card-title">Environmental Impact on King County Property</div>
+            <p>Analyzed property values using Lasso regression to evaluate environmental impacts.</p>
+        </a> -->
+
+        <!-- HFS Employee Turnover Rate Analysis -->
+        <a href="hfs-turnover.html" class="project-card" data-skill="Data-Analysis Organizational-Behavior" data-language="Python">
+            <img src="assets/img/projects/covers/hfs-turnover.png" alt="HFS Employee Turnover Rate Analysis Project Cover" class="project-image">
+            <span class="tag tag-skill">Data Analysis</span><span class="tag tag-skill">Research</span>
+            <span class="tag tag-language">Python</span>
+            <div class="card-title">HFS Employee Turnover Analysis</div>
+            <p>Investigated turnover rates and analyzed factors affecting employee retention at HFS.</p>
+        </a>
+
+        <!-- eCommerce Order Management System -->
+        <!-- <a href="ecommerce-database.html" class="project-card" data-skill="Database-Design" data-language="SQL">
+            <img src="assets/img/projects/covers/ecommerce-database.png" alt="eCommerce Order Management Project Cover" class="project-image">
+            <span class="tag tag-skill">Database Design</span><span class="tag tag-skill">Data Analysis</span>
+            <span class="tag tag-language">SQL</span>
+            <div class="card-title">eCommerce Order Management</div>
+            <p>Built an order management system with SQL to streamline transactions for an eCommerce store.</p>
+        </a> -->
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="https://github.com/chesie909" target="_blank">
+                <img src="assets/img/icons/github.png" alt="GitHub" style="height: 24px; width: 24px;">
+            </a>
+            <a href="https://www.linkedin.com/in/chesie-yu/" target="_blank">
+                <img src="assets/img/icons/linkedin.png" alt="LinkedIn" style="height: 24px; width: 24px;">
+            </a>
+            <a href="mailto:chesie909@gmail.com" target="_blank">
+                <img src="assets/img/icons/email.png" alt="Email" style="height: 24px; width: 24px;">
+            </a>
+            <p>&copy; 2024 Chesie Yu</p>
+        </div>
+    </footer>
+    
+<script src="assets/js/filters.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesie Yu - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="home-page">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Menu icon for mobile -->
+        <ul id="menu">
+            <li class="home-icon">
+                <a href="index.html">
+                    <img src="assets/img/icons/home.png" alt="Home" style="height: 24px; width: 24px;">
+                    <span class="home-text">Home</span> <!-- Visible on mobile -->
+                </a>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="design.html">Design</a></li>
+        </ul>
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="panel">
+        <div class="intro-container">
+            <div class="intro-text-container">
+                <p class="welcome-text">Hello! I am</p>
+                <p class="name-text">Chesie Yu</p>
+                <p class="intro-description">I am a Data Scientist based in Seattle, Washington.</p>
+                <a href="projects.html" class="cta">View My Projects</a>
+            </div>
+            <div class="intro-image-container">
+                <img src="assets/img/chesie.JPG" alt="Chesie Yu">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="panel">
+        <h2>About Me</h2>
+        <p>[Placeholder for bio]</p>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="panel">
+        <h1 class="section-title">Featured Projects</h1>
+        <div class="project-container">
+            <!-- Lambda News Digest Project Card -->
+            <a href="https://uw-team-lambda.github.io/lambda/" class="featured-project-card">
+                <img src="assets/img/projects/covers/lambda-news-digest.png" alt="Lambda News Digest Cover" class="project-image">
+                <p class="project-category">Data Science/NLP</p>
+                <h2 class="project-title">Lambda News Digest</h2>
+                <p class="project-intro">A live news platform using NLP and data engineering to deliver up-to-date content insights.</p>
+            </a>
+            
+            <!-- Spotify Music Recommendation System Project Card -->
+            <a href="https://youtu.be/MQVb2xs3I-M" class="featured-project-card">
+                <img src="assets/img/projects/covers/spotify.png" alt="Spotify Music Recommendation System Cover" class="project-image">
+                <p class="project-category">Web Development</p>
+                <h2 class="project-title">Spotify Music Recommendation System</h2>
+                <p class="project-intro">A recommendation engine providing personalized music insights with interactive visualizations.</p>
+            </a>
+            
+            <!-- Retail Sales Analysis Project Card -->
+            <a href="https://public.tableau.com/app/profile/chesie.yu/viz/StorePerformanceAssessment/Story1" class="featured-project-card">
+                <img src="assets/img/projects/covers/bi-system.png" alt="Retail Sales Analysis Cover" class="project-image">
+                <p class="project-category">Business Intelligence</p>
+                <h2 class="project-title">Retail Sales Analysis</h2>
+                <p class="project-intro">Implemented a Snowflake data warehouse and developed Tableau dashboards for actionable retail insights.</p>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="https://github.com/chesie909" target="_blank">
+                <img src="assets/img/icons/github.png" alt="GitHub" style="height: 24px; width: 24px;">
+            </a>
+            <a href="https://www.linkedin.com/in/chesie-yu/" target="_blank">
+                <img src="assets/img/icons/linkedin.png" alt="LinkedIn" style="height: 24px; width: 24px;">
+            </a>
+            <a href="mailto:chesie909@gmail.com" target="_blank">
+                <img src="assets/img/icons/email.png" alt="Email" style="height: 24px; width: 24px;">
+            </a>
+            <p>&copy; 2024 Chesie Yu</p>
+        </div>
+    </footer>
+
+<!-- JavaScript for menu toggle -->
+<script src="assets/js/menu.js"></script>
+</body>
+</html>
+
