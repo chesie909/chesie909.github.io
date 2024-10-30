@@ -32,6 +32,7 @@ body {
     font-family: "Gill Sans", Helvetica, Arial, sans-serif;
     background-color: var(--color-light);
     color: var(--color-dark);
+    font-size: 1rem
 }
 
 /* Full-screen Panels */
@@ -311,17 +312,43 @@ html {
     margin-bottom: 1rem;
 }
 
-/* About Text Styling */
-.about-text {
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: center;
-    max-width: 700px;
+
+
+
+/* About Section Styling */
+#about {
+    width: 80%;
     margin: 0 auto;
+    /* padding: 3rem 0; */
+    text-align: center;
+    line-height: 1.6;
+    color: var(--color-dark); /* Assuming --color-dark is your main text color */
+}
+
+#about h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+#about p {
+    margin-bottom: 1.5rem; /* Adds padding after each paragraph */
+    font-size: 1.2rem;
+    max-width: 700px; /* Sets a readable line length */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 
 /* Project Container */
+
+#projects h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
 .project-container {
     display: flex;
     gap: 2rem;
@@ -334,7 +361,7 @@ html {
  .featured-project-card {
     display: block;
     width: 25rem;
-    height: 60vh;
+    height: 54vh;
     background-color: var(--color-white);
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -361,23 +388,28 @@ html {
 .project-category {
     color: var(--color-purple);
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
 /* Project Title Styling */
 .project-title {
-    font-size: 1.2rem;
+    width: 80%;
+    font-size: 1.35rem;
     font-weight: bold;
-    margin: 0.5rem 0;
+    margin: 0.5rem auto;
+    padding-bottom: 0.4rem;
 }
 
-/* Project Intro Styling */
 .project-intro {
-    font-size: 0.9rem;
+    width: 90%;
+    text-align: center;
+    font-size: 1rem;
     color: var(--color-dark);
     line-height: 1.4;
+    margin: 0 auto;
 }
+
 
 
 
