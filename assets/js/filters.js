@@ -31,16 +31,16 @@ document.querySelectorAll('.filter-options button').forEach(button => {
             tool: [...document.querySelectorAll('.filter-section:nth-child(3) .active')].map(btn => btn.getAttribute('data-filter'))
         };
 
-        // Filter projects based on active selections
+        // Modify filter projects based on active selections
         document.querySelectorAll('.project-card').forEach(card => {
-            const cardSkills = card.getAttribute('data-skill').split(' ');
-            const cardLanguages = card.getAttribute('data-language').split(' ');
-            const cardTools = card.getAttribute('data-tool').split(' ');
+            const cardSkills = card.getAttribute('data-skill') ? card.getAttribute('data-skill').split(' ') : [];
+            const cardLanguages = card.getAttribute('data-language') ? card.getAttribute('data-language').split(' ') : [];
+            const cardTools = card.getAttribute('data-tool') ? card.getAttribute('data-tool').split(' ') : [];
 
             const matches = (
-                (activeFilters.skill.includes('All') || activeFilters.skill.length === 0 || activeFilters.skill.some(filter => cardSkills.includes(filter))) &&
-                (activeFilters.language.includes('All') || activeFilters.language.length === 0 || activeFilters.language.some(filter => cardLanguages.includes(filter))) &&
-                (activeFilters.tool.includes('All') || activeFilters.tool.length === 0 || activeFilters.tool.some(filter => cardTools.includes(filter)))
+                (activeFilters.skill.includes('All') ? cardSkills.length > 0 : activeFilters.skill.length === 0 || activeFilters.skill.some(filter => cardSkills.includes(filter))) &&
+                (activeFilters.language.includes('All') ? cardLanguages.length > 0 : activeFilters.language.length === 0 || activeFilters.language.some(filter => cardLanguages.includes(filter))) &&
+                (activeFilters.tool.includes('All') ? cardTools.length > 0 : activeFilters.tool.length === 0 || activeFilters.tool.some(filter => cardTools.includes(filter)))
             );
 
             card.style.display = matches ? 'block' : 'none';
